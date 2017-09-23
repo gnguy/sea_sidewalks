@@ -15,7 +15,6 @@ This project uses data on sidewalk surface conditions collected during a citywid
 ## Future Features
 * Determine cost of repairing sidewalks from point of interest
 * Determine demographic data for sidewalks
-* 
 
 ## Technology 
 * [RShiny](https://shiny.rstudio.com/): What the web application is primarily built on. Making R the primary application language.  
