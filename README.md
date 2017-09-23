@@ -5,7 +5,7 @@ This project uses data on sidewalk surface conditions collected during a citywid
 ## Functions: 
 * Allow users to locate sidewalks with verified issues from a **Point of Interest**.
 * Points of Interest can be categorized (from highest priority to lowest) as _Government Buildings_, _Transportation_, _Hospitals_, _Public Accommodations (commercial/business zones)_, _Employment Facilities_, _Residential Neighborhoods_ based on ADA Act Priority Scores.
-* From a point of interest, a 1-2 block radius search is generated showings sidewalks with **Verified Issues**. 
+* From a point of interest, a 1-2 block radius search is generated showing sidewalks with **Verified Issues**. 
 
 ## Sidewalks 
 * Sidewalks are generated through a public [Sidewalk Observations](https://data.seattle.gov/dataset/SidewalkObservations/q37p-ync7) data sheet. Each sidewalk is one block long. 
