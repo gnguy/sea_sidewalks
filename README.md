@@ -26,6 +26,7 @@ This project uses data on sidewalk surface conditions collected during a citywid
  * [Richard McGovern]
  * [Grant Nguyen]
  * [Kathryn Schelonka]
+ * [Steve Lewis]
 
 ##Data sources:
 * [Sidewalk observations](https://data.seattle.gov/dataset/SidewalkObservations/q37p-ync7)
