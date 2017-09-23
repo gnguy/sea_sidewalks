@@ -1,8 +1,38 @@
 # sea_sidewalks
 Analysis and visualization of City of Seattle sidewalk condition data
-
 This project uses data on sidewalk surface conditions collected during a citywide asset audit during Summer 2017. 
 
-Data sources:
-* Sidewalk observations: https://data.seattle.gov/dataset/SidewalkObservations/q37p-ync7
-* Sidewalk verifications: https://data.seattle.gov/dataset/SidewalkVerifications/dtqr-7xpd
+## Functions: 
+* Allow users to locate sidewalks with verified issues from a **Point of Interest**.
+* Points of Interest can be categorized (from highest priority to lowest) as _Government Buildings_, _Transportation_, _Hospitals_, _Public Accommodations (commercial/business zones)_, _Employment Facilities_, _Residential Neighborhoods_ based on ADA Act Priority Scores.
+* From a point of interest, a 1-2 block radius search is generated showings sidewalks with **Verified Issues**. 
+
+## Sidewalks 
+* Sidewalks are generated through a public [Sidewalk Observations](https://data.seattle.gov/dataset/SidewalkObservations/q37p-ync7) data sheet. Each sidewalk is one block long. 
+* Sidewalks carry verified issues. taken from [Sidewalk Verifications](https://data.seattle.gov/dataset/SidewalkVerifications/dtqr-7xpd). Each issue is one point with x&y coordinates. Sidewalks can have multiple verified issues. 
+* Using this data, sidewalk repair priority can be categorized by _Low_, _Medium_, and _High_ priority repairs. This allows the user to determine which point of interest has the most sidewalks with pressing issues. 
+
+## Future Features
+* Determine cost of repairing sidewalks from point of interest
+* Determine demographic data for sidewalks
+* 
+
+## Technology 
+* [RShiny](https://shiny.rstudio.com/): What the web application is primarily built on. Making R the primary application language.  
+* Oh so many things
+
+## Contributors 
+ * [Mitchell Hendee] 
+ * [Richard McGovern]
+ * [Grant Nguyen]
+ * [Kathryn Schelonka]
+
+##Data sources:
+* [Sidewalk observations](https://data.seattle.gov/dataset/SidewalkObservations/q37p-ync7)
+* [Sidewalk verifications](https://data.seattle.gov/dataset/SidewalkVerifications/dtqr-7xpd)
+* [Cultural Spaces Seattle](https://data.seattle.gov/dataset/data-seattle-gov-GIS-shapefile-datasets/f7tb-rnup/data)
+
+* [My Neighborhood Maps Data.Seattle.Gov](https://data.seattle.gov/Community/My-Neighborhood-Map/82su-5fxf/data)
+* [Bus Stops King County](https://gis-kingcounty.opendata.arcgis.com/datasets?t=transportation_OpenData)
+
+* [Street Network](https://data.seattle.gov/dataset/Street-Network-Database/afip-2mzr)
