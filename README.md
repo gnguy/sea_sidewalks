@@ -27,7 +27,7 @@ This project uses data on sidewalk surface conditions collected during a citywid
  * [Kathryn Schelonka]
  * [Steve Lewis]
 
-##Data sources:
+## Data sources:
 * [Sidewalk observations](https://data.seattle.gov/dataset/SidewalkObservations/q37p-ync7)
 * [Sidewalk verifications](https://data.seattle.gov/dataset/SidewalkVerifications/dtqr-7xpd)
 * [Cultural Spaces Seattle](https://data.seattle.gov/dataset/data-seattle-gov-GIS-shapefile-datasets/f7tb-rnup/data)
