@@ -8,6 +8,7 @@ This project uses data on sidewalk surface conditions collected during a citywid
 * From a point of interest, a 1-2 block radius search is generated showing sidewalks with **Verified Issues**. 
 * Users are able to access a **Report Card** 
 
+
 ## Sidewalks 
 * Sidewalks are generated through a public [Sidewalk Observations](https://data.seattle.gov/dataset/SidewalkObservations/q37p-ync7) data sheet. Each sidewalk is one block long. 
 * Sidewalks carry verified issues. taken from [Sidewalk Verifications](https://data.seattle.gov/dataset/SidewalkVerifications/dtqr-7xpd). Each issue is one point with x&y coordinates. Sidewalks can have multiple verified issues. 
@@ -24,6 +25,7 @@ This project uses data on sidewalk surface conditions collected during a citywid
 
 
 ## Contributors 
+
  * [Mitchell Hendee](https://github.com/kunomaclis) 
  * [Richard McGovern](https://github.com/richardwmcgovern)
  * [Grant Nguyen](https://github.com/gnguy)
@@ -31,7 +33,8 @@ This project uses data on sidewalk surface conditions collected during a citywid
  * [Mike G]()
  * [Steve Lewish](https://github.com/lordjoe)
 
-##Data sources:
+
+## Data sources:
 * [Sidewalk observations](https://data.seattle.gov/dataset/SidewalkObservations/q37p-ync7)
 * [Sidewalk verifications](https://data.seattle.gov/dataset/SidewalkVerifications/dtqr-7xpd)
 * [Cultural Spaces Seattle](https://data.seattle.gov/dataset/data-seattle-gov-GIS-shapefile-datasets/f7tb-rnup/data)
