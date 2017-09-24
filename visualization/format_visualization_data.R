@@ -59,6 +59,9 @@ observation_map <- data.table(raw_name = c("SURFCOND", "HEIGHTDIFF", "OBSTRUCT",
 sidewalk_observations[surface_condtion == "MISSINGLOW", surface_condition := "Missing Section (2x2)"]
 sidewalk_observations[surface_condtion == "MISSINGMID", surface_condition := "Missing Section (4x4)"]
 sidewalk_observations[surface_condtion == "MISSINGHI", surface_condition := "Missing Section (8x8)"]
+sidewalk_observations[surface_condtion == "CRACK<36", surface_condition := "CRACK < 36"]
+sidewalk_observations[surface_condtion == "CRACK<72", surface_condition := "CRACK < 72"]
+sidewalk_observations[surface_condtion == "CRACK>72", surface_condition := "CRACK > 72"]
 
 
 ## Create formatted data labels (TODO: Put this in a separate file)
