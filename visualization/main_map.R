@@ -30,7 +30,7 @@ main_map_ui <- function(id, sidewalk_observations, observation_map, poi_data) {
       conditionalPanel(condition = paste0("input['", ns("toggle_top_priority"), "'] == true"),
                         numericInput(ns("sel_top_number"),
                                     "Number of Top Priority Issues",
-                                    min = 1, max = 500, value = 100),
+                                    min = 1, max = 500, value = 20),
                        checkboxInput(ns("toggle_number_weighting"), "Weight Priority by Number of Issues", FALSE)
       ),
       checkboxInput(ns("toggle_pois"), "Display Points of Interest (POIs)", FALSE),
