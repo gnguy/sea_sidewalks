@@ -1,0 +1,280 @@
+,Type,Name,longitude,latitude,Address,hoods_,hoods_id,s_hood,l_hood,l_hoodid
+0,Community Centers,Alki Community Center,-122.406987,47.5776,5817 SW Stevens St.,76.0,168.0,Alki,WEST SEATTLE,19.0
+1,Community Centers,Ballard Community Center,-122.392405,47.67285,6020 28th Ave NW,30.0,129.0,Adams,BALLARD,7.0
+2,Community Centers,Bitter Lake Community Center,-122.348408,47.724314,13035 Linden Ave. N,113.0,101.0,Bitter Lake,NO BROADER TERM,1.0
+3,Community Centers,Delridge Community Center,-122.364001,47.56333,4501 Delridge Wy SW,92.0,174.0,North Delridge,DELRIDGE,20.0
+4,Community Centers,Garfield Community Center,-122.302395,47.607701,2323 E Cherry St,59.0,155.0,Mann,CENTRAL AREA,14.0
+5,Community Centers,Green Lake Community Center,-122.328707,47.680378,7201 E Green Lake Dr. N,36.0,123.0,Green Lake,NO BROADER TERM,6.0
+6,Community Centers,Hiawatha Community Center,-122.384601,47.578143,2700 California Ave. SW,77.0,169.0,North Admiral,WEST SEATTLE,19.0
+7,Community Centers,High Point Community Center,-122.3748,47.54065,6920 34th Ave. SW,94.0,182.0,High Point,DELRIDGE,20.0
+8,Community Centers,International District Community Center,-122.322831,47.596411,719 8th Avenue S,63.0,164.0,International District,DOWNTOWN,13.0
+9,Community Centers,Jefferson Community Center,-122.308117,47.569779,3801 Beacon Ave S,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+10,Community Centers,Langston Hughes Cultural Arts Center,-122.310087,47.601397,104 17th Ave S,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+11,Community Centers,Laurelhurst Community Center,-122.277861,47.659175,4554 NE 41st St,42.0,136.0,Laurelhurst,NO BROADER TERM,4.0
+12,Community Centers,Loyal Heights Community Center,-122.382945,47.68477,2101 NW 77th St.,29.0,120.0,Loyal Heights,BALLARD,7.0
+13,Community Centers,Magnolia Community Center,-122.399828,47.641954,2550 34TH AVE W,54.0,144.0,Southeast Magnolia,MAGNOLIA,8.0
+14,Community Centers,Meadowbrook Community Center,-122.291539,47.705952,10517 35th Ave NE,106.0,108.0,Meadowbrook,LAKE CITY,3.0
+15,Community Centers,Miller Community Center,-122.306852,47.621879,330 19th Ave E,103.0,149.0,Stevens,CAPITOL HILL,11.0
+16,Community Centers,Montlake Community Center,-122.31004,47.641613,1618 E Calhoun St.,100.0,146.0,Montlake,CAPITOL HILL,11.0
+17,Community Centers,Queen Anne Community Center,-122.359234,47.636143,1901 1st Ave. W,46.0,148.0,West Queen Anne,QUEEN ANNE,10.0
+18,Community Centers,Rainier Beach Community Center,-122.270747,47.524042,8825 Rainier Ave. S,86.0,192.0,Dunlap,RAINIER VALLEY,15.0
+19,Community Centers,Rainier Community Center,-122.284537,47.561319,4600 38th Ave S,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+20,Community Centers,Ravenna/Eckstein Community Center,-122.304141,47.676651,6535 Ravenna Ave. NE,38.0,125.0,Ravenna,NO BROADER TERM,4.0
+21,Community Centers,South Park Community Center,-122.324018,47.528346,8319 8th Ave S,71.0,187.0,South Park,NO BROADER TERM,18.0
+22,Community Centers,Southwest Community Center,-122.368952,47.527887,2801 SW Thistle St,96.0,191.0,Roxhill,DELRIDGE,20.0
+23,Community Centers,Van Asselt Community Center,-122.295241,47.539405,2820 S Myrtle St,84.0,186.0,Holly Park,BEACON HILL,17.0
+24,Community Centers,Yesler Community Center,-122.320772,47.601427,917 E Yesler Way,66.0,162.0,Yesler Terrace,DOWNTOWN,13.0
+25,Elementary Schools,Adams,-122.29301,47.70994,11051 34th Ave NE,106.0,108.0,Meadowbrook,LAKE CITY,3.0
+26,Elementary Schools,Alki,-122.407827,47.577141,3010 59th Ave SW,76.0,168.0,Alki,WEST SEATTLE,19.0
+27,Elementary Schools,Arbor Heights,-122.377586,47.509701,3701 SW 104th St,75.0,193.0,Arbor Heights,WEST SEATTLE,19.0
+28,Elementary Schools,B.F. Day,-122.349124,47.654636,3921 Linden Ave N,35.0,137.0,Fremont,NO BROADER TERM,6.0
+29,Elementary Schools,Bailey Gatzert,-122.315483,47.601201,1301 E Yesler Wy,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+30,Elementary Schools,Beacon Hill International,-122.315104,47.58547,2025 - 14th Ave S,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+31,Elementary Schools,Brighton,-122.27691,47.541744,6725 45th Ave S,85.0,185.0,Brighton,RAINIER VALLEY,15.0
+32,Elementary Schools,Broadview-Thomson K-8,-122.353151,47.724632,13052 Greenwood Ave N,113.0,101.0,Bitter Lake,NO BROADER TERM,1.0
+33,Elementary Schools,Bryant,-122.292207,47.671842,3311 NE 60th St,38.0,125.0,Ravenna,NO BROADER TERM,4.0
+34,Elementary Schools,Coe,-122.365599,47.640516,2424 7th Ave W,48.0,140.0,North Queen Anne,QUEEN ANNE,10.0
+35,Elementary Schools,Concord International School,-122.324689,47.523611,723 S Concord,71.0,187.0,South Park,NO BROADER TERM,18.0
+36,Elementary Schools,Daniel Bagley,-122.342306,47.686358,7821 Stone Ave N,36.0,123.0,Green Lake,NO BROADER TERM,6.0
+37,Elementary Schools,Dearborn Park,-122.296286,47.552261,2820 S Orcas St,82.0,172.0,Mid-Beacon Hill,BEACON HILL,17.0
+38,Elementary Schools,Dunlap,-122.274656,47.524989,4525 S Cloverdale,86.0,192.0,Dunlap,RAINIER VALLEY,15.0
+39,Elementary Schools,Emerson,-122.258635,47.514821,9709 60th Ave S,87.0,194.0,Rainier Beach,RAINIER VALLEY,15.0
+40,Elementary Schools,Gatewood,-122.388497,47.540252,4320 SW Myrtle St,74.0,184.0,Gatewood,WEST SEATTLE,19.0
+41,Elementary Schools,Graham Hill,-122.268533,47.545757,5149 S Graham St,97.0,173.0,Seward Park,SEWARD PARK,16.0
+42,Elementary Schools,Green Lake,-122.328498,47.676302,2400 N 65th,36.0,123.0,Green Lake,NO BROADER TERM,6.0
+43,Elementary Schools,Greenwood,-122.35996,47.687253,144 NW 80th St,120.0,115.0,Greenwood,NO BROADER TERM,1.0
+44,Elementary Schools,Hawthorne,-122.283385,47.565906,4100 39th Ave S,89.0,170.0,Mount Baker,RAINIER VALLEY,15.0
+45,Elementary Schools,Highland Park,-122.348278,47.525177,1012 SW Trenton St,91.0,188.0,Highland Park,DELRIDGE,20.0
+46,Elementary Schools,Jane Adams,-122.29301,47.70994,6110 28th Ave NW,106.0,108.0,Meadowbrook,LAKE CITY,3.0
+47,Elementary Schools,John Muir,-122.290579,47.573242,3301 S Horton St,89.0,170.0,Mount Baker,RAINIER VALLEY,15.0
+48,Elementary Schools,John Rogers,-122.284635,47.707425,4030 NE 109th St,105.0,107.0,Matthews Beach,LAKE CITY,3.0
+49,Elementary Schools,John Stanford International,-122.324054,47.657528,4057 5th Ave NE,34.0,133.0,Wallingford,NO BROADER TERM,6.0
+50,Elementary Schools,Kimball,-122.303012,47.574044,3200 23rd Ave S,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+51,Elementary Schools,Lafayette,-122.387234,47.579495,2645 California Ave SW,77.0,169.0,North Admiral,WEST SEATTLE,19.0
+52,Elementary Schools,Laurelhurst,-122.277962,47.662199,4530 46th Ave NE,42.0,136.0,Laurelhurst,NO BROADER TERM,4.0
+53,Elementary Schools,Lawton,-122.390476,47.656713,4000 27th Ave W,52.0,134.0,Lawton Park,MAGNOLIA,8.0
+54,Elementary Schools,Lowell,-122.31838,47.624424,1058 E Mercer St,102.0,151.0,Broadway,CAPITOL HILL,11.0
+55,Elementary Schools,Loyal Heights,-122.389052,47.686434,2511 NW 80th St,29.0,120.0,Loyal Heights,BALLARD,7.0
+56,Elementary Schools,Maple,-122.3189,47.558126,4925 Corson Ave S,82.0,172.0,Mid-Beacon Hill,BEACON HILL,17.0
+57,Elementary Schools,Mcgilvra,-122.284831,47.634078,1617 38th Ave E,101.0,147.0,Madison Park,CAPITOL HILL,11.0
+58,Elementary Schools,Montlake,-122.304286,47.640634,2409 22nd Ave E,100.0,146.0,Montlake,CAPITOL HILL,11.0
+59,Elementary Schools,North Beach,-122.387037,47.694976,9018 24th Ave NW,116.0,109.0,North Beach/Blue Ridge,NO BROADER TERM,1.0
+60,Elementary Schools,Northgate,-122.329584,47.714867,11725 1st Ave NE,114.0,102.0,Haller Lake,NORTHGATE,2.0
+61,Elementary Schools,Olympic Hills,-122.306757,47.723687,13018 20th Ave NE,107.0,104.0,Olympic Hills,LAKE CITY,3.0
+62,Elementary Schools,Olympic View,-122.321258,47.698231,504 NE 95th St,118.0,112.0,Maple Leaf,NORTHGATE,2.0
+63,Elementary Schools,Roxhill,-122.37056,47.518053,9430 30th Ave SW,96.0,191.0,Roxhill,DELRIDGE,20.0
+64,Elementary Schools,Sacajawea,-122.307474,47.698448,9501 20th Ave NE,118.0,112.0,Maple Leaf,NORTHGATE,2.0
+65,Elementary Schools,Sanislo,-122.358659,47.539609,1812 SW Myrtle St,93.0,180.0,Riverview,DELRIDGE,20.0
+66,Elementary Schools,Schmitz Park,-122.396731,47.57269,5000 SW Spokane St,77.0,169.0,North Admiral,WEST SEATTLE,19.0
+67,Elementary Schools,Stevens,-122.307864,47.631456,1242 18th Ave E,103.0,149.0,Stevens,CAPITOL HILL,11.0
+68,Elementary Schools,Thurgood Marshall,-122.299846,47.590959,2401 S Irving St,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+69,Elementary Schools,View Ridge,-122.275333,47.680688,7047 50th Ave NE,37.0,119.0,View Ridge,NO BROADER TERM,4.0
+70,Elementary Schools,Wedgwood,-122.297053,47.690538,2720 NE 85th St,98.0,117.0,Wedgwood,NO BROADER TERM,4.0
+71,Elementary Schools,West Seattle,-122.373494,47.541762,6760 34th Ave SW,94.0,182.0,High Point,DELRIDGE,20.0
+72,Elementary Schools,West Woodland,-122.362247,47.6706,5601 4th Ave NW,32.0,130.0,West Woodland,BALLARD,7.0
+73,Elementary Schools,Whittier,-122.373077,47.683591,1320 NW 75th St,31.0,121.0,Whittier Heights,BALLARD,7.0
+74,Elementary Schools,Whitworth,-122.275955,47.554778,5215 46th Ave S,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+75,Elementary Schools,Wing Luke,-122.284905,47.53074,3701 S Kenyon St,83.0,183.0,South Beacon Hill,BEACON HILL,17.0
+76,Family Support Center,Cascade Peoples Center,-122.33218,47.62111,309 PONTIUS AVE N,51.0,200.0,South Lake Union,CASCADE,12.0
+77,Family Support Center,Family Works Resource Center,-122.3391,47.66117,1501 N 45th St,34.0,133.0,Wallingford,NO BROADER TERM,6.0
+78,Family Support Center,High Point Family Center,-122.37609,47.54303,6558 35th Ave SW,94.0,182.0,High Point,DELRIDGE,20.0
+79,Family Support Center,International Family Center,-122.32545,47.59636,611 S Lane St,63.0,164.0,International District,DOWNTOWN,13.0
+80,Family Support Center,New Holly Family Center,-122.29043,47.53935,7050 32nd Ave S,84.0,186.0,Holly Park,BEACON HILL,17.0
+81,Family Support Center,North Seattle Family Center,-122.2938,47.71948,3200 NE 125th,108.0,105.0,Cedar Park,LAKE CITY,3.0
+82,Family Support Center,Rainier Beach Family Center,-122.27074,47.52472,8825 Rainier Ave S,86.0,192.0,Dunlap,RAINIER VALLEY,15.0
+83,Family Support Center,Southwest Family Center,-122.36348,47.56204,4555 Delridge Way SW,92.0,174.0,North Delridge,DELRIDGE,20.0
+84,Farmers Markets,Ballard,-122.383178,47.666398,5300 BALLARD AVE NW,30.0,129.0,Adams,BALLARD,7.0
+85,Farmers Markets,Broadway,-122.320111,47.620938,10th Ave E & E Thomas St,102.0,151.0,Broadway,CAPITOL HILL,11.0
+86,Farmers Markets,Columbia City,-122.286166,47.559395,4801 RAINIER AVE S,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+87,Farmers Markets,Fremont,-122.353297,47.650202,N 34TH & EVANSTON AVE N,35.0,137.0,Fremont,NO BROADER TERM,6.0
+88,Farmers Markets,Lake City,-122.296318,47.721104,NE 127TH & 30TH AVE NE,107.0,104.0,Olympic Hills,LAKE CITY,3.0
+89,Farmers Markets,Madison Madrona,-122.2962,47.61294,M L KING JR WAY S & E UNION ST,55.0,158.0,Madrona,CENTRAL AREA,14.0
+90,Farmers Markets,Magnolia,-122.400694,47.642146,2550 34TH AVE W,54.0,144.0,Southeast Magnolia,MAGNOLIA,8.0
+91,Farmers Markets,Phinney,-122.353948,47.677557,67TH AVE & PHINNEY AVE N,33.0,126.0,Phinney Ridge,NO BROADER TERM,6.0
+92,Farmers Markets,University,-122.313533,47.665149,UNIVERSITY AVE NE & NE 50TH ST,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+93,Farmers Markets,Wallingford,-122.335308,47.660933,1815 N 45TH ST,34.0,133.0,Wallingford,NO BROADER TERM,6.0
+94,Farmers Markets,West Seattle,-122.387736,47.56088,SW ALASKA ST & CALIFORNIA AVE SW,79.0,175.0,Genesee,WEST SEATTLE,19.0
+95,Ferry Terminal,Fauntleroy Terminal,-122.393631,47.523234,4829 SW Barton,80.0,189.0,Fauntleroy,WEST SEATTLE,19.0
+96,Ferry Terminal,Seattle Main Terminal - Colman Dock,-122.33763,47.602729,801 Alaska Way,64.0,159.0,Central Business District,DOWNTOWN,13.0
+97,Food Banks,Asian Counseling And Referral Services,-122.322334,47.596483,720 8th Ave S,63.0,164.0,International District,DOWNTOWN,13.0
+98,Food Banks,Ballard Food Bank,-122.387661,47.679582,7005 24th Ave NW,29.0,120.0,Loyal Heights,BALLARD,7.0
+99,Food Banks,Beacon Avenue Food Bank,-122.300331,47.546769,6230 Beacon Ave S,82.0,172.0,Mid-Beacon Hill,BEACON HILL,17.0
+100,Food Banks,Blessed Sacrament Food Bank,-122.319416,47.665359,5050 8th Ave NE,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+101,Food Banks,Bo Da Dao Trang,-122.284441,47.515561,3909 S Sunny View Dr,83.0,183.0,South Beacon Hill,BEACON HILL,17.0
+102,Food Banks,Cambodian Senior Club,-122.345149,47.515155,9800 8th Ave SW,,,,,
+103,Food Banks,Cascade Immanuel Food Bank,-122.332595,47.620733,1215 Thomas St,51.0,200.0,South Lake Union,CASCADE,12.0
+104,Food Banks,Central Area Motivation Program,-122.308541,47.625456,722 18th Ave E,103.0,149.0,Stevens,CAPITOL HILL,11.0
+105,Food Banks,Chicken Soup Brigade,-122.319318,47.612259,1002 E Seneca St,65.0,160.0,First Hill,DOWNTOWN,13.0
+106,Food Banks,Downtown Food Bank,-122.341519,47.60863,1531 Western Ave 5th floor,61.0,201.0,Pike-Market,DOWNTOWN,13.0
+107,Food Banks,El Centro De La Raza,-122.31198,47.580786,2524 16th Ave S,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+108,Food Banks,Emergency Feeding Program,-122.298464,47.599165,2615 S Jackson St,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+109,Food Banks,Familyworks-Wallingford,-122.339139,47.661302,1501 N 45th St,34.0,133.0,Wallingford,NO BROADER TERM,6.0
+110,Food Banks,Friendly Island Of Tonga Seniors,-122.322996,47.528846,8319 8th Ave S,71.0,187.0,South Park,NO BROADER TERM,18.0
+111,Food Banks,Indo-China Chinese Elderly Association,-122.325177,47.5991,409 Maynard Ave S,63.0,164.0,International District,DOWNTOWN,13.0
+112,Food Banks,Jewish Family Service Food Bank,-122.311587,47.615313,1601 16th Ave,103.0,149.0,Stevens,CAPITOL HILL,11.0
+113,Food Banks,Korean Senior Club Ii,-122.314268,47.601242,153 14th Ave S,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+114,Food Banks,Lake City Food Bank,-122.296462,47.721181,12707 30th Ave NE,107.0,104.0,Olympic Hills,LAKE CITY,3.0
+115,Food Banks,Northwest Community Services,-122.288711,47.565566,4205 Rainier Ave S,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+116,Food Banks,Operational Emergency Center,-122.245348,47.496876,11827 Renton Ave S,,,,,
+117,Food Banks,Phinney Ridge Food Bank,-122.355178,47.683311,7500 Greenwood Ave N,120.0,115.0,Greenwood,NO BROADER TERM,1.0
+118,Food Banks,Providence Regina House,-122.320351,47.529771,8201 10th Ave S,71.0,187.0,South Park,NO BROADER TERM,18.0
+119,Food Banks,Puget Sound Labor Agency,-122.351499,47.616432,2800 1st Ave,62.0,156.0,Belltown,DOWNTOWN,13.0
+120,Food Banks,Salvation Army Food Bank,-122.328816,47.613412,1101 Pike St,65.0,160.0,First Hill,DOWNTOWN,13.0
+121,Food Banks,Salvation Army White Center,-122.354989,47.522378,9050 16th Ave SW,91.0,188.0,Highland Park,DELRIDGE,20.0
+122,Food Banks,Samoan Senior Club,-122.322996,47.528846,8319 8th Ave S,71.0,187.0,South Park,NO BROADER TERM,18.0
+123,Food Banks,Seattle Indian Center,-122.317349,47.597396,611 12th Ave S #300,63.0,164.0,International District,DOWNTOWN,13.0
+124,Food Banks,Seattle Korean Elders Association,-122.310136,47.601781,104 17th Ave,57.0,157.0,Minor,CENTRAL AREA,14.0
+125,Food Banks,Society Of St. Vincent De Paul-Georgetown Service Center,-122.329456,47.549814,5950 4th Ave S,70.0,177.0,Georgetown,NO BROADER TERM,18.0
+126,Food Banks,Spiritual Miracles Food Bank,-122.24084,47.49142,7422 South 126th Street,,,,,
+127,Food Banks,Tahanan Filipino Services,-122.28778,47.550936,5740 M L King Jr Way S,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+128,Food Banks,The Food Bank At St. Marys,-122.306445,47.60728,611 20th Ave,57.0,157.0,Minor,CENTRAL AREA,14.0
+129,Food Banks,University District Service League,-122.312083,47.66331,4731 15th Ave NE,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+130,Food Banks,Vietnamese Friendship Association,-122.31938,47.599102,1017 S Jackson St,63.0,164.0,International District,DOWNTOWN,13.0
+131,Food Banks,Volunteers Of America-Greenwood,-122.355521,47.699736,9747 Greenwood Ave N,120.0,115.0,Greenwood,NO BROADER TERM,1.0
+132,Food Banks,West Seattle Food Bank,-122.376998,47.564761,3518 SW Genesee St.,79.0,175.0,Genesee,WEST SEATTLE,19.0
+133,General Attractions,Ballard Locks,-122.396338,47.667439,3015 NW 54th St,30.0,129.0,Adams,BALLARD,7.0
+134,General Attractions,Benaroya Hall,-122.337173,47.607939,200 University St,64.0,159.0,Central Business District,DOWNTOWN,13.0
+135,General Attractions,Pike Place Market,-122.341212,47.608798,1st Ave & Pike St,61.0,201.0,Pike-Market,DOWNTOWN,13.0
+136,General Attractions,Pioneer Square,-122.333848,47.602016,1st Ave & Yesler St,67.0,163.0,Pioneer Square,DOWNTOWN,13.0
+137,General Attractions,Port Of Seattle,-122.353747,47.614,2711 Alaskan Wy,62.0,156.0,Belltown,DOWNTOWN,13.0
+138,General Attractions,Seattle Aquarium,-122.342426,47.60788,1483 Alaskan Wy,61.0,201.0,Pike-Market,DOWNTOWN,13.0
+139,General Attractions,Seattle Center,-122.353983,47.622078,305 Harrison St,47.0,152.0,Lower Queen Anne,QUEEN ANNE,10.0
+140,General Attractions,Seattle Underground Tour,-122.333468,47.602191,608 1st Ave,67.0,163.0,Pioneer Square,DOWNTOWN,13.0
+141,General Attractions,Woodland Park Zoo,-122.35173,47.667859,N 50th & Fremont Ave N,33.0,126.0,Phinney Ridge,NO BROADER TERM,6.0
+142,Health Centers - Community,45th St Clinic,-122.3378,47.661164,1629 N 45th St,34.0,133.0,Wallingford,NO BROADER TERM,6.0
+143,Health Centers - Community,Carolyn Downs Community Health Clinic,-122.304768,47.601321,2101 E Yesler Way,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+144,Health Centers - Community,Central Area Dental Clinic,-122.304768,47.601321,2101 E Yesler Way,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+145,Health Centers - Community,Country Doctor Community Health Clin,-122.306924,47.624076,500 19th Ave E,103.0,149.0,Stevens,CAPITOL HILL,11.0
+146,Health Centers - Community,Georgetown Dental Clinic,-122.315869,47.547557,6200 13th Ave S,70.0,177.0,Georgetown,NO BROADER TERM,18.0
+147,Health Centers - Community,Greenwood Medical Clinic,-122.353376,47.690412,415 N 85th St,120.0,115.0,Greenwood,NO BROADER TERM,1.0
+148,Health Centers - Community,High Point Clinic,-122.377394,47.548194,6020 35th Ave SW,78.0,176.0,Fairmount Park,WEST SEATTLE,19.0
+149,Health Centers - Community,Holly Park Community Clinic,-122.284054,47.536852,3815 S Othello St,84.0,186.0,Holly Park,BEACON HILL,17.0
+150,Health Centers - Community,International District Community Clinic,-122.322909,47.596473,720 8th Ave S,63.0,164.0,International District,DOWNTOWN,13.0
+151,Health Centers - Community,Odessa Brown Childrens Clinic,-122.304768,47.601321,2101 E Yesler Way,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+152,Health Centers - Community,Pike Market Medical Clinic,-122.342498,47.61064,1930 Post Alley,61.0,201.0,Pike-Market,DOWNTOWN,13.0
+153,Health Centers - Community,Rainier Beach Medical Clinic,-122.269698,47.526754,8444 Rainier Ave S,86.0,192.0,Dunlap,RAINIER VALLEY,15.0
+154,Health Centers - Community,Rainier Park Medical Clinic,-122.285716,47.563636,4400 37th Ave S,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+155,Health Centers - Community,Sea Mar South Park Dental Clinic,-122.315104,47.52338,8915 14th Ave S,71.0,187.0,South Park,NO BROADER TERM,18.0
+156,Health Centers - Community,Sea Mar South Park Medical Clinic,-122.314718,47.524898,8720 14th Ave S,71.0,187.0,South Park,NO BROADER TERM,18.0
+157,Health Centers - Community,Seattle Indian Health Board Clinic,-122.318378,47.597212,611 12th Ave S,63.0,164.0,International District,DOWNTOWN,13.0
+158,Health Centers - Community,Southeast Family Dental Clinic,-122.285332,47.539687,3800 S Myrtle St,84.0,186.0,Holly Park,BEACON HILL,17.0
+159,Health Centers - Community,Uw Medicine - Belltown,-122.32989,47.600582,2505 2nd Ave Suite 200,67.0,163.0,Pioneer Square,DOWNTOWN,13.0
+160,Health Centers - Public,Columbia Public Health Center,-122.285716,47.563636,4400 37th Ave S,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+161,Health Centers - Public,Downtown Public Health Center,-122.342167,47.614596,2124 4th Ave,62.0,156.0,Belltown,DOWNTOWN,13.0
+162,Health Centers - Public,North Public Health Center,-122.334861,47.705576,10501 Meridian Ave N,117.0,110.0,North College Park,NORTHGATE,2.0
+163,Health Centers - Public,North Seattle Dental Clinic,-122.295844,47.718998,12359 Lake City Way NE,104.0,106.0,Victory Heights,LAKE CITY,3.0
+164,High Schools,Ballard,-122.374888,47.67661,1418 NW 65th St,31.0,121.0,Whittier Heights,BALLARD,7.0
+165,High Schools,Chief Sealth,-122.366155,47.528631,5950 Delridge Wy SW,95.0,190.0,South Delridge,DELRIDGE,20.0
+166,High Schools,Cleveland,-122.31391,47.55237,5511 15th Ave S,82.0,172.0,Mid-Beacon Hill,BEACON HILL,17.0
+167,High Schools,Franklin,-122.293647,47.575887,3013 S Mt. Baker Blvd,89.0,170.0,Mount Baker,RAINIER VALLEY,15.0
+168,High Schools,Garfield,-122.301903,47.605421,400 23rd Ave,59.0,155.0,Mann,CENTRAL AREA,14.0
+169,High Schools,Ingraham,-122.336837,47.725699,1819 N 135TH St,114.0,102.0,Haller Lake,NORTHGATE,2.0
+170,High Schools,Nathan Hale,-122.294532,47.707628,10750 30th Ave NE,106.0,108.0,Meadowbrook,LAKE CITY,3.0
+171,High Schools,Rainier Beach,-122.265859,47.524072,8815 Seward Pk S,86.0,192.0,Dunlap,RAINIER VALLEY,15.0
+172,High Schools,Roosevelt,-122.312808,47.67723,1410 NE 66th St,43.0,124.0,Roosevelt,NO BROADER TERM,4.0
+173,High Schools,West Seattle,-122.384592,47.57678,3000 California Ave SW,77.0,169.0,North Admiral,WEST SEATTLE,19.0
+174,Higher Education,Cornish College Of The Arts,-122.336288,47.618156,1000 Lenora St,62.0,156.0,Belltown,DOWNTOWN,13.0
+175,Higher Education,North Seattle Community College,-122.334011,47.699361,9600 College Way North,117.0,110.0,North College Park,NORTHGATE,2.0
+176,Higher Education,Seattle Central Community College,-122.321353,47.616768,1701 Broadway,102.0,151.0,Broadway,CAPITOL HILL,11.0
+177,Higher Education,Seattle Pacific University,-122.362208,47.649128,3307 3rd Ave W,48.0,140.0,North Queen Anne,QUEEN ANNE,10.0
+178,Higher Education,Seattle University,-122.317111,47.610653,901 12th Ave,65.0,160.0,First Hill,DOWNTOWN,13.0
+179,Higher Education,South Seattle Community College,-122.35307,47.547,6000 16th Ave SW,93.0,180.0,Riverview,DELRIDGE,20.0
+180,Higher Education,University Of Washington,-122.309602,47.655388,1600 NE Grant Ln,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+181,Hospitals,Group Health Hospital,-122.311817,47.619195,201 16th Ave E,103.0,149.0,Stevens,CAPITOL HILL,11.0
+182,Hospitals,Harborview Medical Center,-122.323769,47.603993,325 9th Ave,66.0,162.0,Yesler Terrace,DOWNTOWN,13.0
+183,Hospitals,Kindred Hospital Seattle,-122.345039,47.507575,10631 8th Ave,,,,,
+184,Hospitals,Navos,-122.366238,47.534193,2600 SW Holden St,94.0,182.0,High Point,DELRIDGE,20.0
+185,Hospitals,Northwest Hospital & Medical Center,-122.336888,47.714248,1550 N. 115th Street,114.0,102.0,Haller Lake,NORTHGATE,2.0
+186,Hospitals,Seattle Cancer Care Alliance,-122.329651,47.626672,825 Eastlake Ave E,51.0,200.0,South Lake Union,CASCADE,12.0
+187,Hospitals,Seattle Children'S,-122.282298,47.661131,4800 Sand Point Wy NE,42.0,136.0,Laurelhurst,NO BROADER TERM,4.0
+188,Hospitals,Swedish Medical Center - Ballard,-122.380473,47.668019,5300 Tallman Ave NW,30.0,129.0,Adams,BALLARD,7.0
+189,Hospitals,Swedish Medical Center - Cherry Hill,-122.311131,47.607411,500 17th Ave,57.0,157.0,Minor,CENTRAL AREA,14.0
+190,Hospitals,Swedish Medical Center - First Hill,-122.321928,47.608842,747 Broadway,65.0,160.0,First Hill,DOWNTOWN,13.0
+191,Hospitals,University Of Washington Medical Center,-122.309072,47.650344,1959 NE Pacific St,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+192,Hospitals,Veterans Hospital,-122.309169,47.562454,1660 S Columbian Way,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+193,Hospitals,Virginia Mason Hospital,-122.32793,47.60953,1100 9th Ave,65.0,160.0,First Hill,DOWNTOWN,13.0
+194,Libraries,Ballard,-122.384204,47.669843,5614 22ND AV NW,30.0,129.0,Adams,BALLARD,7.0
+195,Libraries,Beacon Hill,-122.311407,47.578046,2821 BEACON AV S,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+196,Libraries,Broadview,-122.356032,47.723004,12755 GREENWOOD AV N,112.0,100.0,Broadview,NO BROADER TERM,1.0
+197,Libraries,Capitol Hill,-122.322451,47.622914,425 HARVARD AV E,102.0,151.0,Broadway,CAPITOL HILL,11.0
+198,Libraries,Central,-122.332968,47.606485,1000 4TH AV,64.0,159.0,Central Business District,DOWNTOWN,13.0
+199,Libraries,Columbia,-122.286879,47.559947,4721 RAINIER AV S,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+200,Libraries,Delridge,-122.363319,47.553047,5423 DELRIDGE WAY SW,94.0,182.0,High Point,DELRIDGE,20.0
+201,Libraries,Douglas-Truth,-122.301832,47.601903,2300 E YESLER WAY,59.0,155.0,Mann,CENTRAL AREA,14.0
+202,Libraries,Fremont,-122.3484,47.650068,731 N 35TH ST,35.0,137.0,Fremont,NO BROADER TERM,6.0
+203,Libraries,Green Lake,-122.326717,47.681501,7364 E GREEN LAKE DR N,36.0,123.0,Green Lake,NO BROADER TERM,6.0
+204,Libraries,Greenwood,-122.354965,47.687497,8016 GREENWOOD AV N,120.0,115.0,Greenwood,NO BROADER TERM,1.0
+205,Libraries,High Point,-122.375814,47.548042,3411 SW RAYMOND ST,94.0,182.0,High Point,DELRIDGE,20.0
+206,Libraries,International District,-122.322834,47.596249,713 8TH AV S,63.0,164.0,International District,DOWNTOWN,13.0
+207,Libraries,Lake City,-122.298087,47.719861,12501 28TH AV NE,107.0,104.0,Olympic Hills,LAKE CITY,3.0
+208,Libraries,Madrona\Sally Goldmark,-122.290014,47.612674,1134 33RD AV,55.0,158.0,Madrona,CENTRAL AREA,14.0
+209,Libraries,Magnolia,-122.401344,47.645316,2801 34TH AV W,53.0,141.0,Briarcliff,MAGNOLIA,8.0
+210,Libraries,Mobile Services,-122.337025,47.616804,2025 9TH AV,62.0,156.0,Belltown,DOWNTOWN,13.0
+211,Libraries,Montlake,-122.301591,47.639747,2401 24TH AV E,100.0,146.0,Montlake,CAPITOL HILL,11.0
+212,Libraries,Newholly,-122.290951,47.538994,7058 32ND AV S,84.0,186.0,Holly Park,BEACON HILL,17.0
+213,Libraries,North East,-122.290711,47.677854,6801 35TH AV NE,38.0,125.0,Ravenna,NO BROADER TERM,4.0
+214,Libraries,Northgate,-122.322677,47.706193,10548 5TH AV NE,118.0,112.0,Maple Leaf,NORTHGATE,2.0
+215,Libraries,Queen Anne,-122.362744,47.633781,400 W GARFIELD ST,46.0,148.0,West Queen Anne,QUEEN ANNE,10.0
+216,Libraries,Rainier Beach,-122.270465,47.521356,9125 RAINIER AV S,86.0,192.0,Dunlap,RAINIER VALLEY,15.0
+217,Libraries,South Park Branch,-122.32259,47.52627,8604 8th Ave S,71.0,187.0,South Park,NO BROADER TERM,18.0
+218,Libraries,Southwest,-122.376182,47.522442,9010 35TH AV SW,96.0,191.0,Roxhill,DELRIDGE,20.0
+219,Libraries,Talking Book\  & Braille,-122.336823,47.61668,2021 9TH AV,62.0,156.0,Belltown,DOWNTOWN,13.0
+220,Libraries,University,-122.317863,47.665539,5009 ROOSEVELT WY NE,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+221,Libraries,Wallingford,-122.339104,47.661174,1501 N 45TH ST,34.0,133.0,Wallingford,NO BROADER TERM,6.0
+222,Libraries,West Seattle,-122.384757,47.582695,2306 42ND AV SW,77.0,169.0,North Admiral,WEST SEATTLE,19.0
+223,Light Rail,Airport / Seatac Station,-122.296898,47.445381,,,,,,
+224,Light Rail,Beacon Hill Station,-122.311533,47.579328,,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+225,Light Rail,Columbia City Station,-122.292692,47.559733,,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+226,Light Rail,International District Station,-122.327992,47.598355,,63.0,164.0,International District,DOWNTOWN,13.0
+227,Light Rail,Mount Baker Station,-122.297679,47.57655,,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+228,Light Rail,Othello Station,-122.281563,47.537987,,85.0,185.0,Brighton,RAINIER VALLEY,15.0
+229,Light Rail,Pioneer Square Station,-122.331216,47.60256,,67.0,163.0,Pioneer Square,DOWNTOWN,13.0
+230,Light Rail,Rainier Beach Station,-122.279391,47.522394,,83.0,183.0,South Beacon Hill,BEACON HILL,17.0
+231,Light Rail,Sodo Station,-122.32739,47.581074,,69.0,167.0,Industrial District,NO BROADER TERM,18.0
+232,Light Rail,Stadium Station,-122.327172,47.591108,,69.0,167.0,Industrial District,NO BROADER TERM,18.0
+233,Light Rail,Tukwila International Blvd Station,-122.287996,47.464031,,,,,,
+234,Light Rail,University Street Station,-122.33602,47.60781,,64.0,159.0,Central Business District,DOWNTOWN,13.0
+235,Light Rail,Westlake Station,-122.33672,47.611572,,64.0,159.0,Central Business District,DOWNTOWN,13.0
+236,Middle Schools,Aki Kurose Academy,-122.281981,47.546321,3928 S Graham St,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+237,Middle Schools,Denny International,-122.370709,47.527917,8402 30th Ave SW,96.0,191.0,Roxhill,DELRIDGE,20.0
+238,Middle Schools,Eckstein,-122.294983,47.682519,3003 NE 75th St,38.0,125.0,Ravenna,NO BROADER TERM,4.0
+239,Middle Schools,Hamilton International,-122.338026,47.657081,4400 Interlake Ave N,34.0,133.0,Wallingford,NO BROADER TERM,6.0
+240,Middle Schools,Madison,-122.390281,47.572982,3429 45th Ave SW,77.0,169.0,North Admiral,WEST SEATTLE,19.0
+241,Middle Schools,Mcclure,-122.358954,47.636827,1915 1st Ave W,46.0,148.0,West Queen Anne,QUEEN ANNE,10.0
+242,Middle Schools,Mercer,-122.312083,47.564132,1600 S Columbian Wy,81.0,166.0,North Beacon Hill,BEACON HILL,17.0
+243,Middle Schools,Washington,-122.30415,47.597956,2101 S Jackson St,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+244,Middle Schools,Whitman,-122.377602,47.696752,9201 15th Ave NW,116.0,109.0,North Beach/Blue Ridge,NO BROADER TERM,1.0
+245,Monorail,Seattle Center,-122.349731,47.621256,305 Harrison St,47.0,152.0,Lower Queen Anne,QUEEN ANNE,10.0
+246,Monorail,Westlake Mall,-122.336842,47.6119,5th Ave & Pine St,64.0,159.0,Central Business District,DOWNTOWN,13.0
+247,Museums and Galleries,Burke Museum,-122.310622,47.660606,17th Ave NE & NE 45 St,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+248,Museums and Galleries,Experience Music Project (Emp),-122.348174,47.62147,325 5th Ave N,47.0,152.0,Lower Queen Anne,QUEEN ANNE,10.0
+249,Museums and Galleries,Frye Art Museum,-122.324166,47.60709,704 Terry Ave,65.0,160.0,First Hill,DOWNTOWN,13.0
+250,Museums and Galleries,Henry Art Gallery,-122.311732,47.65652,4100 15th Ave NE,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+251,Museums and Galleries,Maritime Discovery Center,-122.349474,47.611373,2205 Alaskan Way,62.0,156.0,Belltown,DOWNTOWN,13.0
+252,Museums and Galleries,Museum Of Flight,-122.29728,47.518588,9404 E Marginal Wy S,,,,,
+253,Museums and Galleries,Museum Of History And Industry,-122.301111,47.645152,2700 24th Ave E,100.0,146.0,Montlake,CAPITOL HILL,11.0
+254,Museums and Galleries,Nordic Heritage Museum,-122.396313,47.677673,3014 NW 67 St,121.0,116.0,Sunset Hill,BALLARD,7.0
+255,Museums and Galleries,Northwest African American Museum,-122.301854,47.588741,2300 S Massachusetts St,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+256,Museums and Galleries,Olympic Sculpture Park,-122.353852,47.616346,2901 Western Ave,62.0,156.0,Belltown,DOWNTOWN,13.0
+257,Museums and Galleries,Pacific Science Center,-122.351104,47.619739,200 Second Ave N,47.0,152.0,Lower Queen Anne,QUEEN ANNE,10.0
+258,Museums and Galleries,Science Fiction Museum,-122.348174,47.62147,325 5th Ave N,47.0,152.0,Lower Queen Anne,QUEEN ANNE,10.0
+259,Museums and Galleries,Seattle Art Museum,-122.33777,47.607402,1300 First Ave,64.0,159.0,Central Business District,DOWNTOWN,13.0
+260,Museums and Galleries,Seattle Asian Art Museum,-122.314199,47.630297,1400 East Prospect Street,102.0,151.0,Broadway,CAPITOL HILL,11.0
+261,Museums and Galleries,Seattle Metropolitan Police Museum,-122.33066,47.599456,317 Third Avenue South,67.0,163.0,Pioneer Square,DOWNTOWN,13.0
+262,Museums and Galleries,Sodo (South Of The Dome) Urban Art Corridor,-122.334202,47.58336,5th Ave S between Spkane St & Royal Brougham,69.0,167.0,Industrial District,NO BROADER TERM,18.0
+263,Museums and Galleries,The Center For Wooden Boats Maritime Museum,-122.336574,47.626367,1010 Valley St,51.0,200.0,South Lake Union,CASCADE,12.0
+264,Museums and Galleries,The Center On Contemporary Art (Coca),-122.40836,47.67528,6413 Seaview Ave NW,121.0,116.0,Sunset Hill,BALLARD,7.0
+265,Museums and Galleries,The Center On Contemporary Art (Coca),-122.34194,47.62231,2721 1st Ave,51.0,200.0,South Lake Union,CASCADE,12.0
+266,Museums and Galleries,The Childrens Museum,-122.353983,47.622078,305 Harrison St,47.0,152.0,Lower Queen Anne,QUEEN ANNE,10.0
+267,Museums and Galleries,Wing Luke Museum,-122.32414,47.598839,719 S King St,63.0,164.0,International District,DOWNTOWN,13.0
+268,Neighborhood Service Centers,Ballard,-122.384206,47.669845,5604 22nd Ave NW,30.0,129.0,Adams,BALLARD,7.0
+269,Neighborhood Service Centers,Central,-122.301985,47.599089,2301 S. Jackson Street Suite 208,60.0,165.0,Atlantic,CENTRAL AREA,14.0
+270,Neighborhood Service Centers,Lake City,-122.298087,47.719861,12525 28th Ave NE,107.0,104.0,Olympic Hills,LAKE CITY,3.0
+271,Neighborhood Service Centers,Southeast,-122.28553,47.558315,3815 S Othello St Ste 105,90.0,179.0,Columbia City,RAINIER VALLEY,15.0
+272,Neighborhood Service Centers,Southwest (formerly Delridge),-122.36918,47.52816,2801 S.W. Thistle St,96.0,191.0,Roxhill,DELRIDGE,20.0
+273,Neighborhood Service Centers,University District,-122.312938,47.662339,4534 University Way NE,44.0,139.0,University District,UNIVERSITY DISTRICT,5.0
+274,Police Precincts,East,-122.317119,47.614945,1519  12TH AVE,102.0,151.0,Broadway,CAPITOL HILL,11.0
+275,Police Precincts,North,-122.334707,47.702929,10049  COLLEGE WAY N,117.0,110.0,North College Park,NORTHGATE,2.0
+276,Police Precincts,South,-122.293356,47.538574,3001  S MYRTLE ST,83.0,183.0,South Beacon Hill,BEACON HILL,17.0
+277,Police Precincts,Southwest,-122.362016,47.535895,2300  SW WEBSTER ST,94.0,182.0,High Point,DELRIDGE,20.0
+278,Police Precincts,West,-122.336591,47.615921,810  VIRGINIA ST,62.0,156.0,Belltown,DOWNTOWN,13.0
