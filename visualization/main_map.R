@@ -7,12 +7,23 @@ main_map_ui <- function(id, sidewalk_observations, observation_map) {
   ns <- NS(id)
   
   issue_types <- c("All", unique(observation_map$formatted_name))
+  council_opts <- paste0("Council District ", unique(sidewalk_observations$council_district))
+  neighborhood_opts <- c("All", unique(sidewalk_observations$neighborhood))
   
   fluidPage(
     column(2, 
       selectInput(ns("sel_issue_type"),
                   "Issue Type",
                   choices = issue_types),
+      selectInput(ns("sel_neighborhood"),
+                  "Neighborhood",
+                  choices = neighborhood_opts),
+      checkboxInput(ns("toggle_top_priority"), "Display Top Priority Issues", FALSE),
+      conditionalPanel(condition = paste0("input['", ns("toggle_top_priority"), "'] == true"),
+                        numericInput(ns("sel_top_number"),
+                                    "Number of Top Priority Issues",
+                                    min = 1, max = 500, value = 100)
+      ),
       downloadButton(ns("download_data"),"Download Table")
     ),
     column(10,
@@ -37,31 +48,52 @@ main_map_server <- function(input, output, session,
   ###################################################################
   ## Pull current and comparison results, and combine into a dataset
   observation_subset <- reactive({
-    if(input$sel_issue_type == "All") {
-      observation_subset <- sidewalk_observations
-    } else {
+    observation_subset <- copy(sidewalk_observations)
+    if(input$sel_neighborhood != "All") observation_subset <- observation_subset[neighborhood == input$sel_neighborhood]
+    if(input$sel_issue_type != "All") {
       selected_issue_type <- observation_map[formatted_name == input$sel_issue_type, raw_name]
-      observation_subset <- sidewalk_observations[OBSERV_TYPE == selected_issue_type,]
+      observation_subset <- observation_subset[OBSERV_TYPE == selected_issue_type,]
     }
+
+    observation_subset[, Priority := runif(nrow(observation_subset), 1, 5)]
+    setorder(observation_subset, -Priority)
 
     return(observation_subset)
   })
+
+  top_point_geo_subset <- reactive({
+    if(input$toggle_top_priority == FALSE) {
+      top_point_geo_subset <- observation_subset()
+    } else {
+      top_point_geo_subset <- head(observation_subset(), input$sel_top_number)
+    }
+    return(top_point_geo_subset)
+  })
+
+
   
   ###################################################################
   ## Generate a main map of 
   output$main_map <- leaflet::renderLeaflet({
-    leaflet() %>%
-      addTiles() %>%
-      addMarkers(data = observation_subset(),
-                 clusterOptions = markerClusterOptions(),
-                 popup = ~formatted_label)
+    if(input$toggle_top_priority == FALSE) {
+      leaflet() %>%
+        addTiles() %>%
+        addMarkers(data = top_point_geo_subset(),
+                   clusterOptions = markerClusterOptions(),
+                   popup = ~formatted_label)
+    } else {
+        leaflet() %>%
+        addTiles() %>%
+        addMarkers(data = top_point_geo_subset(),
+                   popup = ~formatted_label)
+    }
   })
 
 
   ###################################################################
   ## Display all tables, scatters, etc.
   output$point_table <- DT::renderDataTable({
-    DT::datatable(observation_subset(), 
+    DT::datatable(top_point_geo_subset(), 
                   rownames=F,
                   filter=list(position="top",plain=T),
                   options=list(
@@ -79,7 +111,7 @@ main_map_server <- function(input, output, session,
         ".csv")
     },
     content=function(con) {
-      write_csv(observation_subset(), con)
+      write_csv(top_point_geo_subset(), con)
     }
   )
 }
