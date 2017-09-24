@@ -1,0 +1,24 @@
+Documentation for OBS_POIBuffer_Join
+
+- Made 800ft buffer proximity zones around all POI's -> called it POIBuffer
+- Spatial Joined the POIBuffer (join features) to OBS (target point features)
+- Result is OBS_POIBuffer_Join. It is composed of the sidewalk OBS, repeated
+each time it fell inside the proximity of a POI
+
+IMPORTANT FIELDS:
+FID <num>        -- Unique ID for each record
+Join_Count <num> -- 0 if not within any proximity, 1 if within at least one proximity.
+OBJECTID <num>   -- ID of joined record from OBS (sometimes repeated)
+SIDEWALK_U <text> -- Sidewalk ID
+OBSERV_TYP <text> -- Type of observed damage
+CLEARANCE_ ~ Height_NUM -- covariates quantifying various relevant aspects
+			   of the observed damage.
+OBJECTID_1        -- ID of POI
+AWNING          (if busstop) -- Is there shelter?
+CROSS_STRE      (if busstop) -- Bus stop address.1
+ON_STREET       (if busstop) -- Bus stop address.2
+Lat			     -- Latitude
+Lon			     -- Longitude
+Type		(if general POI) -- Type of POI from Steve's curated dataset
+Name		(if general POI) -- Name "
+Address		(if general POI) -- Address "
