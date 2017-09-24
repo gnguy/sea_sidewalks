@@ -48,24 +48,23 @@ observation_metadata <- fread(paste0(data_dir, "/sidewalk_obs_locmeta.csv"), sel
 setnames(observation_metadata, c("C_DISTRICT", "s_hood"), c("council_district", "neighborhood"))
 sidewalk_observations <- merge(sidewalk_observations, observation_metadata, by = "objectid")
 
-
-
 ## Format sidewalk observation variable names for Leaflet, and create dictionary for observation type subsetting
 setnames(sidewalk_observations, c("x", "y"), c("longitude", "latitude"))
 observation_map <- data.table(raw_name = c("SURFCOND", "HEIGHTDIFF", "OBSTRUCT", "XSLOPE", "OTHER"),
                               formatted_name = c("Surface conditions", "Height difference", "Obstruction", "Cross-slope", "Other"))
 
 ### Make surface condition values more legible
-sidewalk_observations[surface_condtion == "MISSINGLOW", surface_condition := "Missing Section (2x2)"]
-sidewalk_observations[surface_condtion == "MISSINGMID", surface_condition := "Missing Section (4x4)"]
-sidewalk_observations[surface_condtion == "MISSINGHI", surface_condition := "Missing Section (8x8)"]
-sidewalk_observations[surface_condtion == "CRACK<36", surface_condition := "CRACK < 36"]
-sidewalk_observations[surface_condtion == "CRACK<72", surface_condition := "CRACK < 72"]
-sidewalk_observations[surface_condtion == "CRACK>72", surface_condition := "CRACK > 72"]
+sidewalk_observations[surface_condition == "MISSINGLOW", surface_condition := "Missing Section (2x2)"]
+sidewalk_observations[surface_condition == "MISSINGMID", surface_condition := "Missing Section (4x4)"]
+sidewalk_observations[surface_condition == "MISSINGHI", surface_condition := "Missing Section (8x8)"]
+sidewalk_observations[surface_condition == "CRACK<36", surface_condition := "CRACK < 36"]
+sidewalk_observations[surface_condition == "CRACK<72", surface_condition := "CRACK < 72"]
+sidewalk_observations[surface_condition == "CRACK>72", surface_condition := "CRACK > 72"]
 
 
 ## Create formatted data labels (TODO: Put this in a separate file)
-sidewalk_observations[, formatted_label := paste0("ID: ", objectid, "<br>", "Sidewalk ID: ", sidewalk_unitid, "<br>", "Issue Type: ", observ_type, "<br>")]
+# sidewalk_observations[, formatted_label := paste0("ID: ", objectid, "<br>", "Sidewalk ID: ", sidewalk_unitid, "<br>", "Issue Type: ", observ_type, "<br>")]
+sidewalk_observations[, formatted_label := paste0("<br><br>Issue Type: ", observ_type, "<br>")]
 sidewalk_observations[observ_type == "SURFCOND", formatted_label := paste0(formatted_label,
                                                                            "Surface Condition: ", surface_condition)]
 sidewalk_observations[observ_type == "HEIGHTDIFF", formatted_label := paste0(formatted_label,
@@ -96,6 +95,10 @@ sidewalk_dt <- sidewalk_observations[, list(num_issues = length(objectid),
                                             neighborhood = neighborhood[1],
                                             council_district = council_district[1]),
                                      by = "sidewalk_unitid"]
+
+## Add total number and estimated cost to the formatted label
+sidewalk_dt[num_issues > 7, formatted_label := ""]
+sidewalk_dt[, formatted_label := paste0("Sidewalk ID: ", sidewalk_unitid, "<br>","Total Issues: ", num_issues, "<br>Estimated Total Cost: ", estimated_cost, "<br>", formatted_label)]
 
 ## Merge on priority scores to sidewalk observations
 sidewalk_dt <- merge(sidewalk_dt, priority_scores, by.x = "sidewalk_unitid", by.y = "SWID", all.x = T)

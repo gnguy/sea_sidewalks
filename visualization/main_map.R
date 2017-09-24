@@ -6,9 +6,9 @@ main_map_ui <- function(id, sidewalk_observations, observation_map, poi_data) {
   ## Initialize namespace for the UI to connect with the server
   ns <- NS(id)
   
-  issue_types <- c("All", unique(observation_map$formatted_name))
+  issue_types <- c("All", sort(unique(observation_map$formatted_name)))
   council_opts <- paste0("Council District ", unique(sidewalk_observations$council_district))
-  neighborhood_opts <- c("All", unique(sidewalk_observations$neighborhood))
+  neighborhood_opts <- c("All", sort(unique(sidewalk_observations$neighborhood)))
   
   fluidPage(
     column(2, 
@@ -102,7 +102,6 @@ main_map_server <- function(input, output, session,
     poi_icon_values$value <- leafIcons
     return(poi_geo_subset)
   })
-
   
   ###################################################################
   ## Generate a main map of 
