@@ -24,6 +24,37 @@ sidewalk_verifications <- fread(paste0(data_dir, "/SidewalkVerifications.csv"))
 ## Import points of interest (POI)s, including schools, bus stops, etc.
 poi_data <- fread(paste0(data_dir, "/pois_with_locmeta.csv"))
 
+## Import categorized cost estimates for sidewalks based on information from Seattle DOT
+cost_data <- fread(paste0(data_dir, "/ObjectIDCost.csv"))
+
+## Create cost estimates based on cost categorization
+cost_data[cost == "LOW", estimated_cost := 1000]
+cost_data[cost %in% c("MEDIUM", "MED"), estimated_cost := 5000]
+cost_data[cost == "HIGH", estimated_cost := 10000]
+cost_data[cost == "0", estimated_cost := 0]
+cost_data[is.na(cost), estimated_cost := 0]
+
+## Import and format point of interest distance data (<= 800 feet of a sidewalk)
+## From the issues on the sidewalk, take the closest distance between an issue and a POI
+## Merge on weights from Seattle DOT closely resembling ADA act guidance on priority/importance
+## Collapse to create a weighted priority score based on the distance from 
+poi_distances <- fread(paste0(data_dir, "/POI_Near_OBS_Processed_WithIDs.csv"))
+poi_distances[Type == "", Type := "Bus Stop"]
+poi_distances <- poi_distances[, list(NEAR_DIST = min(NEAR_DIST)), by = c("SWID", "NEAR_POI", "Type")]
+
+poi_priority_weights <- fread(paste0(data_dir, "/Type_Costs_Weights.csv"))
+colnames(poi_priority_weights) <- c("Index", "Type", "priority_score")
+
+## Two sets of weights: Double-weighted if within 100 feet of a point of interest, and then if within 800 feet
+## Take the first poi_distance observation per SWID 
+poi_distances <- merge(poi_distances, poi_priority_weights, by = "Type")
+
+poi_100_ft_scores <- poi_distances[NEAR_DIST <= 100, list(priority_score = sum(priority_score)), by = "SWID"]
+poi_800_ft_scores <- poi_distances[, list(priority_score = .5 * sum(priority_score)), by = "SWID"]
+
+priority_scores <- rbindlist(list(poi_100_ft_scores, poi_800_ft_scores), use.names = T)
+priority_scores <- priority_scores[, list(priority_score = sum(priority_score)), by = "SWID"]
+
 ## Merge neighborhood and council districts onto sidewalk observation data
 observation_metadata <- fread(paste0(data_dir, "/sidewalk_obs_locmeta.csv"), select = c("objectid", "C_DISTRICT", "s_hood"))
 setnames(observation_metadata, c("C_DISTRICT", "s_hood"), c("council_district", "neighborhood"))
@@ -54,6 +85,26 @@ sidewalk_observations[observ_type == "XSLOPE", formatted_label := paste0(formatt
 sidewalk_observations[observ_type == "OTHER", formatted_label := paste0(formatted_label,
                                                                         "Sidewalk Feature: ", other_feature)]
 
+## Merge on cost data
+sidewalk_observations <- merge(sidewalk_observations, cost_data[, .SD, .SDcols = c("objectid", "estimated_cost")], by = "objectid")
+
+## Collapse from issues to sidewalk-specific problems
+sidewalk_dt <- sidewalk_observations[, list(num_issues = length(objectid),
+                                            estimated_cost = sum(estimated_cost, na.rm = T),
+                                            formatted_label = paste(formatted_label, collapse = "<br><br>"),
+                                            latitude = mean(latitude),
+                                            longitude = mean(longitude),
+                                            neighborhood = neighborhood[1],
+                                            council_district = council_district[1]),
+                                     by = "sidewalk_unitid"]
+
+## Merge on priority scores to sidewalk observations
+sidewalk_dt <- merge(sidewalk_dt, priority_scores, by.x = "sidewalk_unitid", by.y = "SWID", all.x = T)
+
+## If a sidewalk is NA, it is assumed to not have any POI within 100 feet or 800 feet
+sidewalk_dt[is.na(priority_score), priority_score := 0]
+setorder(sidewalk_dt, -priority_score)
+
 ## Create formatted point of interest labels
 poi_data[type == "Bus Stop", formatted_label := paste0("Bus Stop <br>", cross_stre, " and ", on_street)]
 poi_data[type != "Bus Stop", formatted_label := paste0(type, "<br>", name)]
@@ -78,24 +129,18 @@ ui <- function(request) {
     # shinythemes::themeSelector(),  # To play around with UI themes
     theme = shinytheme("paper"),
     tabPanel("Main Map", main_map_ui("main_map", 
-                                     sidewalk_observations = sidewalk_observations,
+                                     sidewalk_observations = sidewalk_dt,
                                      observation_map = observation_map,
                                      poi_data = poi_data))
-    # tabPanel("Report Card", report_card_ui("report_card", 
-    #                                  sidewalk_observations = sidewalk_observations,
-    #                                  observation_map = observation_map))
   )
 }
 
 
 server <- function(input,output,session) {
   callModule(main_map_server, "main_map",
-             sidewalk_observations = sidewalk_observations,
+             sidewalk_observations = sidewalk_dt,
              observation_map = observation_map,
              poi_data = poi_data)
-  # callModule(report_card_server, "report_card",
-  #            sidewalk_observations = sidewalk_observations,
-  #            observation_map = observation_map)
 }
 
 shinyApp(ui,server)

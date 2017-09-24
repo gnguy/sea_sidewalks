@@ -18,11 +18,13 @@ main_map_ui <- function(id, sidewalk_observations, observation_map, poi_data) {
       selectInput(ns("sel_neighborhood"),
                   "Neighborhood",
                   choices = neighborhood_opts),
+      radioButtons(ns("toggle_sidewalk"), "Display Sidewalks or Reported Issues", choices = c("Sidewalks", "Issues"), selected = "Issues"),
       checkboxInput(ns("toggle_top_priority"), "Display Top Priority Issues", FALSE),
       conditionalPanel(condition = paste0("input['", ns("toggle_top_priority"), "'] == true"),
                         numericInput(ns("sel_top_number"),
                                     "Number of Top Priority Issues",
                                     min = 1, max = 500, value = 100)
+                       checkboxInput(ns("toggle_number_weighting"), "Weight Priority by Number of Issues", FALSE)
       ),
       checkboxInput(ns("toggle_pois"), "Display Points of Interest (POIs)", FALSE),
       conditionalPanel(condition = paste0("input['", ns("toggle_pois"), "'] == true"),
@@ -58,8 +60,6 @@ main_map_server <- function(input, output, session,
       selected_issue_type <- observation_map[formatted_name == input$sel_issue_type, raw_name]
       observation_subset <- observation_subset[observ_type == selected_issue_type,]
     }
-    observation_subset[, Priority := runif(nrow(observation_subset), 1, 5)]
-    setorder(observation_subset, -Priority)
 
     return(observation_subset)
   })
@@ -72,6 +72,15 @@ main_map_server <- function(input, output, session,
     }
     return(top_point_geo_subset)
   })
+  
+  ## For the table display, mark explicitly which columns to keep in the data table view and download CSV
+  table_display_subset <- reactive({
+    if(input$toggle_sidewalk == "Sidewalks") keep_cols <- c()
+    if(input$toggle_sidewalk == "Issues") keep_cols <- c()
+    table_display_subset <- top_point_geo_subset()[, .SD, .SDcols = keep_cols]
+    
+    return(table_display_subset)
+  })
 
   poi_icon_values <- reactiveValues()
   
@@ -82,7 +91,8 @@ main_map_server <- function(input, output, session,
     
     leafIcons <- awesomeIcons(
       icon = poi_geo_subset$icon,
-      library = "fa"
+      library = "fa",
+      markerColor = "green"
     )
     
     poi_icon_values$value <- leafIcons
@@ -97,11 +107,12 @@ main_map_server <- function(input, output, session,
                   addTiles()
     
     ## If showing the top-priority points, render each point individually. Otherwise, allow clustering.
-    if(input$toggle_top_priority == FALSE) {
+    if(input$toggle_top_priority == FALSE & input$sel_neighborhood == "All") {
       leaf_plot <- addMarkers(leaf_plot,
                               data = top_point_geo_subset(),
                               clusterOptions = markerClusterOptions(),
-                              popup = ~formatted_label)
+                              popup = paste("<div class='leaflet-popup-scrolled' style='max-width:400px;max-height:100px'>", leaf_plot$formatted_label)
+                  )
     } else {
       leaf_plot <- addMarkers(leaf_plot,
                               data = top_point_geo_subset(),
