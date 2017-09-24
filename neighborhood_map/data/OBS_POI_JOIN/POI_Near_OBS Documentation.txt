@@ -1,0 +1,11 @@
+OBS_ORIGIN -- The ID of the OBS point distances are calculated from
+NEAR_POI   -- The ID of the POI near the the given OBS
+SWID       -- Sidewalk ID the OBS belongs to
+AWNING     -- Bus shelter
+CROSS_STRE -- Cross street for bus stop
+ON_STREET  -- Street bus stop is on
+Lat        -- Latitude
+Lon        -- Longitude
+Type       -- Type of Point of Interest (POI)
+Name       -- Name of POI
+Address    -- POI Address
