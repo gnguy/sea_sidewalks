@@ -12,16 +12,24 @@ library(readr)
 library(htmltools)
 
 ## Import sidewalk observation data
-data_dir <- "~/Documents/Git/sea_sidewalks/input_data"
+# data_dir <- "~/Documents/Git/sea_sidewalks/input_data"
+data_dir <- "data"
 
-sidewalk_observations <- fread(file.path(data_dir, "sidewalk_obs_cleaned.csv"))
-sidewalk_verifications <- fread(file.path(data_dir, "SidewalkVerifications.csv"))
-poi_data <- fread(file.path(data_dir, "pois_with_locs.csv"))
+## Import sidewalk observations with filled-in observation types
+sidewalk_observations <- fread(paste0(data_dir, "/sidewalk_obs_cleaned.csv"))
 
-observation_metadata <- fread(file.path(data_dir, "sidewalk_obs_locmeta.csv"), select = c("objectid", "C_DISTRICT", "s_hood"))
+## Import sidewalk verification data, used to map sidewalk lines
+sidewalk_verifications <- fread(paste0(data_dir, "/SidewalkVerifications.csv"))
+
+## Import points of interest (POI)s, including schools, bus stops, etc.
+poi_data <- fread(paste0(data_dir, "/pois_with_locmeta.csv"))
+
+## Merge neighborhood and council districts onto sidewalk observation data
+observation_metadata <- fread(paste0(data_dir, "/sidewalk_obs_locmeta.csv"), select = c("objectid", "C_DISTRICT", "s_hood"))
 setnames(observation_metadata, c("C_DISTRICT", "s_hood"), c("council_district", "neighborhood"))
 sidewalk_observations <- merge(sidewalk_observations, observation_metadata, by = "objectid")
 
+## Format sidewalk observation variable names for Leaflet, and create dictionary for observation type subsetting
 setnames(sidewalk_observations, c("x", "y"), c("longitude", "latitude"))
 observation_map <- data.table(raw_name = c("SURFCOND", "HEIGHTDIFF", "OBSTRUCT", "XSLOPE", "OTHER"),
                               formatted_name = c("Surface conditions", "Height difference", "Obstruction", "Cross-slope", "Other"))
@@ -46,11 +54,22 @@ sidewalk_observations[observ_type == "XSLOPE", formatted_label := paste0(formatt
 sidewalk_observations[observ_type == "OTHER", formatted_label := paste0(formatted_label,
                                                                         "Sidewalk Feature: ", other_feature)]
 
+## Create formatted point of interest labels
+poi_data[type == "Bus Stop", formatted_label := paste0("Bus Stop <br>", cross_stre, " and ", on_street)]
+poi_data[type != "Bus Stop", formatted_label := paste0(type, "<br>", name)]
+
+## Pre-define icons for point of interest data
+poi_data[type %in% c("Health Centers - Community", "Health Centers - Public"), icon := "fa-hospital-o"]
+poi_data[type %in% c("Elementary Schools", "High Schools", "Higher Education"), icon := "fa-graduation-cap"]
+poi_data[type %in% c("Ferry Terminal", "Monorail", "Light Rail", "Bus Stop"), icon := "fa-bus"]
+poi_data[type %in% c("Community Centers", "Farmers Markets", "Family Support Center", "Food Banks", "Neighborhood Service Centers"), icon := "fa-users"]
+poi_data[type %in% c("Museums and Galleries", "Police Precincts", "General Attractions"), icon := "fa-star"]
+
 ## Source all of the visualization code
 source("main_map.R")
 
 ## Source helper functions
-source("summarize_data.R")
+# source("summarize_data.R")
 # source("report_card.R")
 
 ## Create the UI -- adding an age button to view all ages, or sub-select to one age group

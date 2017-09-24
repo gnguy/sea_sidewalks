@@ -25,6 +25,9 @@ main_map_ui <- function(id, sidewalk_observations, observation_map, poi_data) {
                                     min = 1, max = 500, value = 100)
       ),
       checkboxInput(ns("toggle_pois"), "Display Points of Interest (POIs)", FALSE),
+      conditionalPanel(condition = paste0("input['", ns("toggle_pois"), "'] == true"),
+                       checkboxInput(ns("toggle_buses"), "Display Bus Stops", FALSE)
+      ),
       downloadButton(ns("download_data"),"Download Table")
     ),
     column(10,
@@ -74,22 +77,15 @@ main_map_server <- function(input, output, session,
   
   poi_geo_subset <- reactive({
     poi_geo_subset <- copy(poi_data)
-    if(input$sel_neighborhood != "All") poi_geo_subset <- poi_geo_subset[s_hood == input$sel_neighborhood]
-    
-    poi_icons <- data.table(poi_type = poi_geo_subset$Type)
-    poi_icons[poi_type %in% c("Health Centers - Community", "Health Centers - Public"), icon := "fa-hospital-o"]
-    poi_icons[poi_type %in% c("Elementary Schools", "High Schools", "Higher Education"), icon := "fa-graduation-cap"]
-    poi_icons[poi_type %in% c("Ferry Terminal", "Monorail", "Light Rail"), icon := "fa-bus"]
-    poi_icons[poi_type %in% c("Community Centers", "Farmers Markets", "Family Support Center", "Food Banks", "Neighborhood Service Centers"), icon := "fa-users"]
-    poi_icons[poi_type %in% c("Museums and Galleries", "Police Precincts", "General Attractions"), icon := "fa-star"]
+    if(input$sel_neighborhood != "All") poi_geo_subset <- poi_geo_subset[S_HOOD == input$sel_neighborhood]
+    if(input$toggle_buses == F) poi_geo_subset <- poi_geo_subset[type != "Bus Stop"]
     
     leafIcons <- awesomeIcons(
-      icon = poi_icons$icon,
+      icon = poi_geo_subset$icon,
       library = "fa"
     )
     
     poi_icon_values$value <- leafIcons
-    
     return(poi_geo_subset)
   })
 
@@ -97,20 +93,27 @@ main_map_server <- function(input, output, session,
   ###################################################################
   ## Generate a main map of 
   output$main_map <- leaflet::renderLeaflet({
+    leaf_plot <- leaflet() %>%
+                  addTiles()
+    
+    ## If showing the top-priority points, render each point individually. Otherwise, allow clustering.
     if(input$toggle_top_priority == FALSE) {
-      leaf_plot <- leaflet() %>%
-                    addTiles() %>%
-                    addMarkers(data = top_point_geo_subset(),
-                               clusterOptions = markerClusterOptions(),
-                               popup = ~formatted_label)
-      if(input$toggle_pois == TRUE) leaf_plot <- addAwesomeMarkers(leaf_plot, data = poi_geo_subset(), icon = poi_icon_values$value)
+      leaf_plot <- addMarkers(leaf_plot,
+                              data = top_point_geo_subset(),
+                              clusterOptions = markerClusterOptions(),
+                              popup = ~formatted_label)
     } else {
-      leaf_plot <- leaflet() %>%
-                  addTiles() %>%
-                  addMarkers(data = top_point_geo_subset(),
-                             popup = ~formatted_label)
-      if(input$toggle_pois == TRUE) leaf_plot <- addAwesomeMarkers(leaf_plot, data = poi_geo_subset(), icon = poi_icon_values$value)
+      leaf_plot <- addMarkers(leaf_plot,
+                              data = top_point_geo_subset(),
+                              popup = ~formatted_label)
+      
     }
+    
+    ## Add points of interest if desired
+    if(input$toggle_pois == TRUE) leaf_plot <- addAwesomeMarkers(leaf_plot, 
+                                                                 data = poi_geo_subset(), 
+                                                                 icon = poi_icon_values$value,
+                                                                 popup = ~formatted_label)
     leaf_plot
   })
 
