@@ -23,7 +23,7 @@ main_map_ui <- function(id, sidewalk_observations, observation_map, poi_data) {
       conditionalPanel(condition = paste0("input['", ns("toggle_top_priority"), "'] == true"),
                         numericInput(ns("sel_top_number"),
                                     "Number of Top Priority Issues",
-                                    min = 1, max = 500, value = 100)
+                                    min = 1, max = 500, value = 100),
                        checkboxInput(ns("toggle_number_weighting"), "Weight Priority by Number of Issues", FALSE)
       ),
       checkboxInput(ns("toggle_pois"), "Display Points of Interest (POIs)", FALSE),
@@ -65,10 +65,14 @@ main_map_server <- function(input, output, session,
   })
 
   top_point_geo_subset <- reactive({
-    if(input$toggle_top_priority == FALSE) {
-      top_point_geo_subset <- observation_subset()
-    } else {
-      top_point_geo_subset <- head(observation_subset(), input$sel_top_number)
+    top_point_geo_subset <- copy(observation_subset())
+    if(input$toggle_top_priority == TRUE) {
+      if(input$toggle_number_weighting == TRUE) { 
+        setorder(top_point_geo_subset, -weighted_priority_score)
+      } else {
+        setorder(top_point_geo_subset, -priority_score)
+      }
+      top_point_geo_subset <- head(top_point_geo_subset, input$sel_top_number)
     }
     return(top_point_geo_subset)
   })
@@ -111,8 +115,7 @@ main_map_server <- function(input, output, session,
       leaf_plot <- addMarkers(leaf_plot,
                               data = top_point_geo_subset(),
                               clusterOptions = markerClusterOptions(),
-                              popup = paste("<div class='leaflet-popup-scrolled' style='max-width:400px;max-height:100px'>", leaf_plot$formatted_label)
-                  )
+                              popup = ~formatted_label)
     } else {
       leaf_plot <- addMarkers(leaf_plot,
                               data = top_point_geo_subset(),
