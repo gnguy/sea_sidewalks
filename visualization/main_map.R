@@ -12,13 +12,20 @@ main_map_ui <- function(id, sidewalk_observations, observation_map, poi_data) {
   
   fluidPage(
     column(2, 
-      selectInput(ns("sel_issue_type"),
-                  "Issue Type",
-                  choices = issue_types),
-      selectInput(ns("sel_neighborhood"),
-                  "Neighborhood",
-                  choices = neighborhood_opts),
-      radioButtons(ns("toggle_sidewalk"), "Display Sidewalks or Reported Issues", choices = c("Sidewalks", "Issues"), selected = "Issues"),
+       selectInput(ns("sel_neighborhood"),
+                   "Neighborhood",
+                   choices = neighborhood_opts),
+       selectInput(ns("sel_issue_type"),
+              "Issue Type",
+              choices = issue_types),
+      # radioButtons(ns("toggle_sidewalk"), "Display Sidewalks or Reported Issues", choices = c("Sidewalks", "Issues"), selected = "Issues"),
+      sliderInput(ns("sel_total_issues"), "Issue Number Range",
+                  min = 0, max = max(sidewalk_observations$num_issues),
+                  value = c(0, max(sidewalk_observations$num_issues))),
+      sliderInput(ns("sel_cost_estimate"), "Cost Estimate Range",
+                  min = 0, max = max(sidewalk_observations$estimated_cost),
+                  value = c(0, max(sidewalk_observations$estimated_cost)),
+                  pre = "$", sep = ","),
       checkboxInput(ns("toggle_top_priority"), "Display Top Priority Issues", FALSE),
       conditionalPanel(condition = paste0("input['", ns("toggle_top_priority"), "'] == true"),
                         numericInput(ns("sel_top_number"),
@@ -35,10 +42,10 @@ main_map_ui <- function(id, sidewalk_observations, observation_map, poi_data) {
     column(10,
            # Show a table view of the relative change results
            tabsetPanel(
-             tabPanel("Main Map",
+             tabPanel("Map",
                       leaflet::leafletOutput(ns("main_map"), height = 800)
              ),
-             tabPanel("Point Table", DT::dataTableOutput(ns("point_table")))
+             tabPanel("Table", DT::dataTableOutput(ns("point_table")))
            )
     )
   )
@@ -60,7 +67,13 @@ main_map_server <- function(input, output, session,
       selected_issue_type <- observation_map[formatted_name == input$sel_issue_type, raw_name]
       observation_subset <- observation_subset[observ_type == selected_issue_type,]
     }
-
+    
+    cost_range <- input$sel_cost_estimate
+    issue_num_range <- input$sel_total_issues
+    
+    observation_subset <- observation_subset[estimated_cost >= cost_range[1] & estimated_cost <= cost_range[2] ]
+    observation_subset <- observation_subset[num_issues >= issue_num_range[1] & num_issues <= issue_num_range[2] ]
+    
     return(observation_subset)
   })
 
@@ -79,8 +92,10 @@ main_map_server <- function(input, output, session,
   
   ## For the table display, mark explicitly which columns to keep in the data table view and download CSV
   table_display_subset <- reactive({
-    if(input$toggle_sidewalk == "Sidewalks") keep_cols <- c()
-    if(input$toggle_sidewalk == "Issues") keep_cols <- c()
+    keep_cols <- c("sidewalk_unitid", "num_issues", "formatted_cost", 
+                   "priority_score", "weighted_priority_score", 
+                   "latitude", "longitude", 
+                   "neighborhood", "council_district")
     table_display_subset <- top_point_geo_subset()[, .SD, .SDcols = keep_cols]
     
     return(table_display_subset)
@@ -134,7 +149,7 @@ main_map_server <- function(input, output, session,
   ###################################################################
   ## Display all tables, scatters, etc.
   output$point_table <- DT::renderDataTable({
-    DT::datatable(top_point_geo_subset(), 
+    DT::datatable(table_display_subset(), 
                   rownames=F,
                   filter=list(position="top",plain=T),
                   options=list(
@@ -152,7 +167,7 @@ main_map_server <- function(input, output, session,
         ".csv")
     },
     content=function(con) {
-      write_csv(top_point_geo_subset(), con)
+      write_csv(table_display_subset(), con)
     }
   )
 }

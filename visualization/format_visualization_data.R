@@ -1,4 +1,4 @@
-library(data.table)
+library(data.table); library(scales)
 
 ## Import sidewalk observation data
 data_dir <- "data"
@@ -98,7 +98,8 @@ sidewalk_dt <- sidewalk_observations[, list(num_issues = length(objectid),
 
 ## Add total number and estimated cost to the formatted label
 sidewalk_dt[num_issues > 7, formatted_label := ""]
-sidewalk_dt[, formatted_label := paste0("Sidewalk ID: ", sidewalk_unitid, "<br>","Total Issues: ", num_issues, "<br>Estimated Total Cost: ", estimated_cost, "<br>", formatted_label)]
+sidewalk_dt[, formatted_cost := dollar_format()(estimated_cost)]
+sidewalk_dt[, formatted_label := paste0("Sidewalk ID: ", sidewalk_unitid, "<br>","Total Issues: ", num_issues, "<br>Estimated Total Cost: ", formatted_cost, "<br>", formatted_label)]
 
 ## Merge on priority scores to sidewalk observations
 sidewalk_dt <- merge(sidewalk_dt, priority_scores, by.x = "sidewalk_unitid", by.y = "SWID", all.x = T)
