@@ -64,7 +64,7 @@ sidewalk_observations[surface_condition == "CRACK>72", surface_condition := "CRA
 
 ## Create formatted data labels (TODO: Put this in a separate file)
 # sidewalk_observations[, formatted_label := paste0("ID: ", objectid, "<br>", "Sidewalk ID: ", sidewalk_unitid, "<br>", "Issue Type: ", observ_type, "<br>")]
-sidewalk_observations[, formatted_label := paste0("<br><br>Issue Type: ", observ_type, "<br>")]
+sidewalk_observations[, formatted_label := paste0("<br>Issue Type: ", observ_type, "<br>")]
 sidewalk_observations[observ_type == "SURFCOND", formatted_label := paste0(formatted_label,
                                                                            "Surface Condition: ", surface_condition)]
 sidewalk_observations[observ_type == "HEIGHTDIFF", formatted_label := paste0(formatted_label,
@@ -89,7 +89,7 @@ sidewalk_observations <- merge(sidewalk_observations, cost_data[, .SD, .SDcols =
 ## Collapse from issues to sidewalk-specific problems
 sidewalk_dt <- sidewalk_observations[, list(num_issues = length(objectid),
                                             estimated_cost = sum(estimated_cost, na.rm = T),
-                                            formatted_label = paste(formatted_label, collapse = "<br><br>"),
+                                            formatted_label = paste(formatted_label, collapse = "<br>"),
                                             latitude = mean(latitude),
                                             longitude = mean(longitude),
                                             neighborhood = neighborhood[1],

@@ -15,9 +15,9 @@ main_map_ui <- function(id, sidewalk_observations, observation_map, poi_data) {
        selectInput(ns("sel_neighborhood"),
                    "Neighborhood",
                    choices = neighborhood_opts),
-       selectInput(ns("sel_issue_type"),
-              "Issue Type",
-              choices = issue_types),
+       # selectInput(ns("sel_issue_type"),
+       #        "Issue Type",
+       #        choices = issue_types),
       # radioButtons(ns("toggle_sidewalk"), "Display Sidewalks or Reported Issues", choices = c("Sidewalks", "Issues"), selected = "Issues"),
       sliderInput(ns("sel_total_issues"), "Issue Number Range",
                   min = 0, max = max(sidewalk_observations$num_issues),
@@ -63,10 +63,10 @@ main_map_server <- function(input, output, session,
   observation_subset <- reactive({
     observation_subset <- copy(sidewalk_observations)
     if(input$sel_neighborhood != "All") observation_subset <- observation_subset[neighborhood == input$sel_neighborhood]
-    if(input$sel_issue_type != "All") {
-      selected_issue_type <- observation_map[formatted_name == input$sel_issue_type, raw_name]
-      observation_subset <- observation_subset[observ_type == selected_issue_type,]
-    }
+    # if(input$sel_issue_type != "All") {
+    #   selected_issue_type <- observation_map[formatted_name == input$sel_issue_type, raw_name]
+    #   observation_subset <- observation_subset[observ_type == selected_issue_type,]
+    # }
     
     cost_range <- input$sel_cost_estimate
     issue_num_range <- input$sel_total_issues
